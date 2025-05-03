@@ -19,6 +19,7 @@ public:
     Simulator(TimeStepper* stepper, Grid2D* grid, double dt, int maxSteps, int outputInterval, FrameWriter* writer);
 
     void run();
+
 private:
     TimeStepper* _stepper;
     Grid2D* _grid;
