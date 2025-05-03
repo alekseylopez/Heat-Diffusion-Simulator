@@ -7,6 +7,13 @@
 namespace heatdiffusion
 {
 
+/*
+ * Derived class of TimeStepper
+ * 
+ * Perform forward-Euler update on every interior cell:
+ *     u_new = u_old + νx·Δxx + νy·Δyy
+ */
+
 class ExplicitStepper : public TimeStepper
 {
 public:

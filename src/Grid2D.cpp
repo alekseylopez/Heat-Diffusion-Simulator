@@ -9,10 +9,14 @@ namespace heatdiffusion
 Grid2D::Grid2D(int Nx, int Ny, double dx, double dy, double alpha):
     _Nx(Nx), _Ny(Ny), _dx(dx), _dy(dy), _alpha(alpha), _data(Nx * Ny) {}
 
+// setters
+
 void Grid2D::setBoundaryCondition(std::function<double(int, int, double)> bc)
 {
     _bc = std::move(bc);
 }
+
+// getters
 
 int Grid2D::nx() const
 {
@@ -38,6 +42,13 @@ double Grid2D::alpha() const
 {
     return _alpha;
 }
+
+std::function<double(int, int, double)> Grid2D::boundaryCondition() const
+{
+    return _bc;
+}
+
+// operators
 
 double& Grid2D::operator()(int i, int j)
 {

@@ -19,6 +19,7 @@ public:
     double dx() const;
     double dy() const;
     double alpha() const;
+    std::function<double(int, int, double)> boundaryCondition() const;
 
     double& operator()(int i, int j);
     double operator()(int i, int j) const;
