@@ -10,14 +10,14 @@ namespace heatdiffusion
 class ImplicitStepper : public TimeStepper
 {
 public:
-    ImplicitStepper() = default;
+    ImplicitStepper(double theta);
 
-    void step(Grid2D& grid, double currentTime, double dt) override
-    {
-        
-    }
+    void step(Grid2D& grid, double currentTime, double dt) override;
 
-    ~ImplicitStepper() override = default;
+    ~ImplicitStepper() override;
+
+private:
+    double _theta;
 };
 
 }

@@ -36,3 +36,10 @@
 
 # DS Store
 .DS_Store
+
+# Makefile
+Makefile
+
+# Build
+/heatdiffusion
+diffusion.gif

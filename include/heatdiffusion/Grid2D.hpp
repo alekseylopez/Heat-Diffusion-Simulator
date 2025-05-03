@@ -7,6 +7,10 @@
 namespace heatdiffusion
 {
 
+/*
+ * Simple 2-axis grid with boundary conditions
+ */
+
 class Grid2D
 {
 public:
