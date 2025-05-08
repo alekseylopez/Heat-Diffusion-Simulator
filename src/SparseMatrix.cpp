@@ -79,7 +79,7 @@ void SparseMatrix::clearRow(int r)
         if(_colIdx[i] == r)
         {
             _vals[i] = 1;
-            found == true;
+            found = true;
             break;
         }
     }
