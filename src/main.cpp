@@ -1,5 +1,6 @@
 #include "heatdiffusion/Grid2D.hpp"
 #include "heatdiffusion/ExplicitStepper.hpp"
+#include "heatdiffusion/ImplicitStepper.hpp"
 #include "heatdiffusion/GifFrameWriter.hpp"
 #include "heatdiffusion/Simulator.hpp"
 
@@ -13,10 +14,10 @@ int main()
 
     int nx = 100, ny = 100;
     double dx = 1.0, dy = 1.0;
-    double alpha = 0.5;
-    double dt = 0.2;
-    int maxSteps = 1000;
-    int outputInterval = 5;
+    double alpha = 0.1;
+    double dt = 0.01;
+    int maxSteps = 25;
+    int outputInterval = 1;
     int delayCS = 5;
     std::string outGif = "diffusion.gif";
 
@@ -26,12 +27,11 @@ int main()
         return 0.0;
     });
 
-    grid(nx / 2, ny / 3) = 100.0;
-    grid(nx / 2, 2 * ny / 3) = 100.0;
+    grid(nx / 2, ny / 2) = 10.0;
 
     // choose TimeStepper: Explicit or Implicit
 
-    heatdiffusion::ExplicitStepper stepper;
+    heatdiffusion::ImplicitStepper stepper(1.0); // 1.0 for backward-Euler, 0.5 for Crank-Nicolson
 
     // create GIF writer on the stack - will make GIF file when destroyed
 

@@ -3,6 +3,8 @@
 
 #include "heatdiffusion/TimeStepper.hpp"
 #include "heatdiffusion/Grid2D.hpp"
+#include "heatdiffusion/SparseMatrix.hpp"
+#include "heatdiffusion/ConjugateGradient.hpp"
 
 namespace heatdiffusion
 {

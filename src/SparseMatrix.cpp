@@ -49,7 +49,7 @@ void SparseMatrix::finalize()
 
 // requires x.size() == _cols
 
-void SparseMatrix::multiply(const std::vector<double>&x, std::vector<double>& y)
+void SparseMatrix::multiply(const std::vector<double>&x, std::vector<double>& y) const
 {
     y.assign(_rows, 0);
 
@@ -86,6 +86,26 @@ void SparseMatrix::clearRow(int r)
 
     if(!found)
         throw std::invalid_argument("SparseMatrix::clearRow");
+}
+
+void SparseMatrix::scale(double factor)
+{
+    for(double& v : _vals)
+        v *= factor;
+}
+
+void SparseMatrix::addIdentity(double factor)
+{
+    for(int r = 0; r < _rows; r++)
+    {
+        for(int idx = _rowPtr[r]; idx < _rowPtr[r + 1]; idx++)
+        {
+            if(_colIdx[idx] == r)
+                _vals[idx] += factor;
+                
+            break;
+        }
+    }
 }
 
 }
