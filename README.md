@@ -1,11 +1,13 @@
 # Heat Diffusion Simulator
 
-Currently simulating heat diffusion using the forward Euler method to solve the heat equation
-$\frac{\partial u}{\partial t} = \alpha \nabla^2 u$ in two dimensions, then writing the short term behavior to a GIF file.
+Currently simulating heat diffusion using the backward Euler method to
+solve the heat equation $\frac{\partial u}{\partial t} = \alpha \nabla^2 u$
+in two dimensions, then writing the short term behavior to a GIF file.
 
 ## Future
 
-Will implement an implicit PDE solver using the backward Euler method.
+Will implement an implicit PDE solver using a FFT to diagonalize the
+discrete Laplacian to be able to just perform per-mode exponential updates.
 
 ## Credits
 
@@ -17,4 +19,5 @@ Uses the file "stb_image_write.h" from https://github.com/nothings/stb.
 
 ## Dependencies
 
-Uses the "magick" command from ImageMagick to convert series of .png files to .gif file.
+Uses the "magick" command from ImageMagick to convert series of .png files
+to .gif file.
