@@ -6,8 +6,8 @@ in two dimensions, then writing the short term behavior to a GIF file.
 
 ## Future
 
-Will implement an implicit PDE solver using a FFT to diagonalize the
-discrete Laplacian to be able to just perform per-mode exponential updates.
+Will implement a Fourier-spectral solver using a FFT to diagonalize the
+discrete Laplacian to allow for per-mode exponential updates.
 
 ## Credits
 
